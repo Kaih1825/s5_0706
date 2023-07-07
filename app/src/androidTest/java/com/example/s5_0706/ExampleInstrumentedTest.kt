@@ -103,4 +103,12 @@ class startTesting {
 
         }
     }
+
+    @Test
+    fun News(){
+        var n1=device.findObject(UiSelector().text("2023/04/19"))
+        var n2=device.findObject(UiSelector().text("2023/01/09"))
+
+        assertEquals(n1.visibleBounds.centerY()<n2.visibleBounds.centerY(),true)
+    }
 }
