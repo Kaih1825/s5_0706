@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="活動展示"/>
+        android:text="@string/showText"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="最新消息"/>
+        android:text="@string/newsText"/>
 
     <ListView
         android:layout_width="match_parent"

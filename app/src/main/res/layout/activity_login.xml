@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登入"
+        android:text="@string/login"
         android:textSize="25dp"
         android:textStyle="bold"/>
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email"
-            android:hint="帳號"/>
+            android:hint="@string/account"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,13 +36,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pwd"
-            android:hint="密碼"
+            android:hint="@string/password"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登入"/>
+        android:id="@+id/login"
+        android:text="@string/login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg"
+        android:text="@string/noAccountReg"/>
 
 </LinearLayout>

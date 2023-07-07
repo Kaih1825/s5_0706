@@ -47,6 +47,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="50dp"
+                        android:id="@+id/news"
                         android:src="@drawable/baseline_newspaper_24"/>
                 </LinearLayout>
             </com.google.android.material.bottomappbar.BottomAppBar>
@@ -65,6 +66,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/name"
                 android:text="請登入"/>
             <Button
                 android:layout_width="wrap_content"

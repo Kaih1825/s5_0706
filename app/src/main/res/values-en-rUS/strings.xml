@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">s5_0706</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="showText">Show</string>
+    <string name="newsText">News</string>
+    <string name="pleaseLogin">Please Login</string>
+    <string name="login">Sign In</string>
+    <string name="logout">Sign Out</string>
+    <string name="wrongFormat">Wrong Format</string>
+    <string name="loginError">Login Error</string>
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="noAccountReg">No Account？Click Me To Sign Up</string>
+    <string name="signUp">Sign Up</string>
+    <string name="passwordAgain">Please re-type the password</string>
+    <string name="name">Name</string>
+    <string name="coutry">Country</string>
+
+    <string-array name="country">
+        <item>Chinese(Taiwan)</item>
+        <item>English(US)</item>
+    </string-array>
+</resources>

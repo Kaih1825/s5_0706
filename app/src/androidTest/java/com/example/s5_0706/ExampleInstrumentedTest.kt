@@ -10,7 +10,9 @@ import androidx.test.uiautomator.*
 import androidx.test.espresso.*
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.RootMatchers.withDecorView
 import androidx.test.espresso.matcher.ViewMatchers.*
+import com.google.android.material.internal.ContextUtils.getActivity
 import org.hamcrest.Matchers.not
 
 import org.junit.Test
@@ -58,11 +60,47 @@ class startTesting {
                 click()
                 setText("aa123.com")
                 onView(withId(R.id.email)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
-                clearTextField()
                 waitForExists(1000)
                 setText("aa123@mail.com")
                 onView(withId(R.id.email)).check(ViewAssertions.matches(not(hasErrorText("格式錯誤"))))
             }
+            device.findObject(UiSelector().resourceId("$dn:id/pwd")).run {
+                click()
+                setText("AAAAAAAA")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+                setText("aaaaaaaa")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+                setText("123456789")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+                setText("Aa12345678")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+                setText("Aa12")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+
+                setText("AAAAAAAAa1234567/89***89898")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(hasErrorText("格式錯誤")))
+
+                setText("Aa123456!!")
+                onView(withId(R.id.pwd)).check(ViewAssertions.matches(not(hasErrorText("格式錯誤"))))
+
+            }
+
+            device.findObjects(By.res("$dn:id/text_input_end_icon"))[0].click()
+            device.findObject(UiSelector().text("Aa123456!!")).run {
+                assertEquals("",waitForExists(5000),true)
+            }
+
+            device.findObjects(By.text("登入"))[1].click()
+
+            device.findObject(UiSelector().text("登入失敗")).run {
+                assertEquals(waitForExists(1000),true)
+            }
+
         }
     }
 }
